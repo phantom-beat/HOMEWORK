@@ -1,0 +1,168 @@
+.songs-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.nav-btn {
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.player-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.now-playing {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.song-info {
+  margin-bottom: 30px;
+}
+
+.song-info h2 {
+  margin: 0 0 10px 0;
+  font-size: 2rem;
+}
+
+.artist {
+  font-size: 1.3rem;
+  margin: 10px 0;
+  opacity: 0.9;
+}
+
+.duration {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin: 10px 0;
+}
+
+.position {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-top: 15px;
+}
+
+.controls {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.control-btn {
+  padding: 12px 30px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.control-btn:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.control-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.playlist {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.playlist h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.song-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.song-list li {
+  display: grid;
+  grid-template-columns: 30px 1fr 150px 80px;
+  gap: 15px;
+  align-items: center;
+  padding: 12px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  margin-bottom: 8px;
+}
+
+.song-list li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.song-list li.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: white;
+}
+
+.song-number {
+  font-weight: bold;
+  opacity: 0.7;
+}
+
+.song-title {
+  font-weight: bold;
+}
+
+.song-artist {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.song-duration {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  text-align: right;
+}
