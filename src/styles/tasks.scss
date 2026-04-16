@@ -1,0 +1,306 @@
+// Tasks styles - Minimalista y sencillo
+
+.tasks-container {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding: 20px;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+
+    h1 {
+      color: #333;
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      span {
+        color: #666;
+        font-size: 14px;
+      }
+
+      .logout-btn {
+        padding: 8px 16px;
+        background: #e74c3c;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: background 0.3s;
+
+        &:hover {
+          background: #c0392b;
+        }
+      }
+    }
+  }
+
+  .tasks-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+
+    .add-task-section {
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+      h2 {
+        color: #333;
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 20px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        input,
+        textarea {
+          padding: 12px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          font-size: 14px;
+          font-family: inherit;
+          transition: border-color 0.3s;
+
+          &:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+          }
+        }
+
+        button {
+          padding: 12px;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          border: none;
+          border-radius: 4px;
+          font-size: 16px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: transform 0.2s, box-shadow 0.2s;
+
+          &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+          }
+        }
+      }
+    }
+
+    .tasks-list {
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+      h2 {
+        color: #333;
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 20px;
+      }
+
+      .loading,
+      .no-tasks {
+        text-align: center;
+        color: #999;
+        padding: 40px 20px;
+        font-size: 14px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        .task-item {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 15px;
+          background-color: #f9f9f9;
+          border: 1px solid #eee;
+          border-radius: 4px;
+          transition: all 0.3s;
+
+          &:hover {
+            background-color: #f0f0f0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+          }
+
+          &.done {
+            opacity: 0.6;
+
+            .task-text h3 {
+              text-decoration: line-through;
+              color: #999;
+            }
+          }
+
+          &.editing {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+
+            .edit-form {
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+
+              input,
+              textarea {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                font-size: 14px;
+                font-family: inherit;
+
+                &:focus {
+                  outline: none;
+                  border-color: #667eea;
+                }
+              }
+
+              .edit-actions {
+                display: flex;
+                gap: 10px;
+
+                button {
+                  padding: 8px 16px;
+                  border: none;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  font-weight: 600;
+                  transition: background 0.3s;
+
+                  &.save-btn {
+                    background: #27ae60;
+                    color: white;
+
+                    &:hover {
+                      background: #229954;
+                    }
+                  }
+
+                  &.cancel-btn {
+                    background: #95a5a6;
+                    color: white;
+
+                    &:hover {
+                      background: #7f8c8d;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .task-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            flex: 1;
+
+            .task-checkbox {
+              margin-top: 4px;
+              cursor: pointer;
+              width: 18px;
+              height: 18px;
+            }
+
+            .task-text {
+              flex: 1;
+
+              h3 {
+                margin: 0 0 5px 0;
+                color: #333;
+                font-size: 16px;
+              }
+
+              p {
+                margin: 0;
+                color: #666;
+                font-size: 14px;
+              }
+            }
+          }
+
+          .task-actions {
+            display: flex;
+            gap: 8px;
+
+            button {
+              padding: 6px 12px;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+              font-size: 12px;
+              font-weight: 600;
+              transition: background 0.3s;
+
+              &.edit-btn {
+                background: #3498db;
+                color: white;
+
+                &:hover {
+                  background: #2980b9;
+                }
+              }
+
+              &.delete-btn {
+                background: #e74c3c;
+                color: white;
+
+                &:hover {
+                  background: #c0392b;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  p {
+    font-size: 18px;
+    color: #666;
+  }
+}
